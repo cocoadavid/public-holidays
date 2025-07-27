@@ -1,5 +1,7 @@
-# React + TypeScript + Vite
+# Public Holidays: React + TypeScript + Vite
+This is a practice project built with React, TypeScript and Vite. It fetches and displays public holidays for multiple countries using the Nager.Date API.
 
+# React + TypeScript + Vite
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:
