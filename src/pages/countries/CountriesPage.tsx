@@ -1,9 +1,11 @@
+import CountriesCard from "./CountriesCard";
+
 const CountriesPage = () => {
-    return ( 
-        <div>
-            COUNTRIES
-        </div>
-     );
+    return (
+        <>
+            <CountriesCard />
+        </>
+    );
 }
- 
+
 export default CountriesPage;

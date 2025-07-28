@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import type { Holiday } from "../types/holiday";
 
-export function usePublicHolidays(url: string, countryCode: string) {
+export function useFetchPublicHolidays(url: string, countryCode: string) {
   const [holidays, setHolidays] = useState<Holiday[]>([]);
   const [error, setError] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(true);
