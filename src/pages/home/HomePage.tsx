@@ -1,9 +1,9 @@
 import { useFetchPublicHolidays } from "../../api/useFetchPublicHolidays";
-import UpcomingHolidays from "./UpcomingHolidays";
+import UpcomingHolidays from "../../components/UpcomingHolidays";
 
 const HomePage = () => {
-    const hu = useFetchPublicHolidays("https://date.nager.at/api/v3/NextPublicHolidays", "HU");
-    const gb = useFetchPublicHolidays("https://date.nager.at/api/v3/NextPublicHolidays", "GB");
+    const hu = useFetchPublicHolidays("HU");
+    const gb = useFetchPublicHolidays("GB");
 
     return ( 
         <div className="grid gap-6 md:grid-cols-2">

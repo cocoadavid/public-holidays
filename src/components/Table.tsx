@@ -7,7 +7,7 @@ type TableProps = {
 
 const Table = ({ holidays, title }: TableProps) => {
   return (
-    <div className="rounded-xl bg-white shadow-md p-5">
+    <>
       {title && <h2 className="text-lg font-semibold mb-4">{title}</h2>}
       <div className="overflow-x-auto">
         <table className="min-w-full text-left text-gray-700">
@@ -35,7 +35,7 @@ const Table = ({ holidays, title }: TableProps) => {
           </tbody>
         </table>
       </div>
-    </div>
+    </>
   );
 };
 

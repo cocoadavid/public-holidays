@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react";
 import type { Holiday } from "../types/holiday";
 
-export function useFetchPublicHolidays(url: string, countryCode: string) {
+const API_URL = "https://date.nager.at/api/v3/NextPublicHolidays";
+
+export function useFetchPublicHolidays(countryCode: string) {
   const [holidays, setHolidays] = useState<Holiday[]>([]);
   const [error, setError] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(true);
@@ -10,7 +12,7 @@ export function useFetchPublicHolidays(url: string, countryCode: string) {
     const fetchHolidays = async () => {
       setIsLoading(true);
       try {
-        const res = await fetch(`${url}/${countryCode}`);
+        const res = await fetch(`${API_URL}/${countryCode}`);
         if (!res.ok) {
           throw new Error(`Error fetching holidays for ${countryCode}: ${res.statusText}`);
         }
@@ -31,7 +33,7 @@ export function useFetchPublicHolidays(url: string, countryCode: string) {
     };
 
     fetchHolidays();
-  }, [url, countryCode]);
+  }, [countryCode]);
 
   return { holidays, error, isLoading };
 }

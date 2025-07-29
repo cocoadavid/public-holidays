@@ -1,5 +1,6 @@
-import Table from "../../components/Table";
-import type { Holiday } from "../../types/holiday";
+import Table from "./Table";
+import type { Holiday } from "../types/holiday";
+import Card from "./Card";
 
 type UpcomingHolidaysProps = {
     title: string;
@@ -10,7 +11,7 @@ type UpcomingHolidaysProps = {
 
 const UpcomingHolidays = ({ title, holidays, isLoading, error }: UpcomingHolidaysProps) => {
     return (
-        <section className="bg-white">
+        <Card>
             {isLoading && <p className="text-gray-500">Loading...</p>}
             {error && <p className="text-red-500">Error: {error}</p>}
 
@@ -19,7 +20,7 @@ const UpcomingHolidays = ({ title, holidays, isLoading, error }: UpcomingHoliday
             {!isLoading && !error && holidays.length > 0 && (
                 <Table title={title} holidays={holidays} />
             )}
-        </section>
+        </ Card>
     );
 }
 
